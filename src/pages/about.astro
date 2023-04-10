@@ -3,7 +3,7 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About";
 
 const identity = {
@@ -37,9 +37,7 @@ const goal = 3;
  }
     </style>
 
-  </head>
-  <body>
-    <Navigation />
+<BaseLayout pageTitle={pageTitle}>
     <h1>About Me</h1>
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
@@ -62,8 +60,6 @@ const goal = 3;
 {happy && <p>I am happy to be learning Astro!</p>}
 
 {finished && <p>I finished this tutorial!</p>}
-
 {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
-  </body>
-</html>
+</BaseLayout>
